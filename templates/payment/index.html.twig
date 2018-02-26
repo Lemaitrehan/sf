@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ include('header.html.twig') }}
+
+    <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"><a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+                    支付方式管理</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+
+        <!--Action boxes-->
+        <div class="container-fluid">
+            <!--Chart-box-->
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                        <h5>支付方式列表</h5>
+                        <a class="label label-info" href="{{ path('admin_payment_create') }}">添加</a> </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>支付名称</th>
+                                <th>APP_ID</th>
+                                <th>是否启用</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in payment %}
+                                <tr>
+                                    <td>{{ item.id }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.appId }}</td>
+                                    <td>{% if item.isActive == 1%} 是 {% else %} 否 {% endif %}</td>
+                                    <td>
+                                        <a href="{{ path('admin_payment_create', {'id': item.id}) }}" class="btn btn-mini btn-info">编辑</a>
+                                        <a href="#" class="btn btn-mini btn-warning">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End-Chart-box-->
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{{ include('header.html.twig') }}
+
+<div id="content">
+    <!--breadcrumbs-->
+    <div id="content-header">
+        <div id="breadcrumb"><a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+            添加商品类型</a></div>
+    </div>
+    <!--End-breadcrumbs-->
+
+    <!--Action boxes-->
+    <div class="container-fluid">
+        <!--Chart-box-->
+        <div class="row-fluid">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                    <h5>添加商品类型</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                        <div class="control-group">
+                            <label class="control-label">类型名称 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.name, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+        <!--End-Chart-box-->
+
+    </div>
+</div>
+{% endblock %}

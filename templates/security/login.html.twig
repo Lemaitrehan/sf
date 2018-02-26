@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/matrix-login.css') }}">
+{% endblock %}
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div id="loginbox">
+        <form id="loginform" class="form-vertical" action="{{ path('login') }}" method="post">
+            <div class="control-group normal_text"> <h3><img src="{{ asset('img/logo.png') }}" alt="Logo" /></h3></div>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="main_input_box">
+                        <span class="add-on bg_lg"><i class="icon-user"></i></span><input type="text" placeholder="管理员用户名" name="_username" value="{{ last_username }}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="main_input_box">
+                        <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" placeholder="管理员密码" name="_password"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">忘记密码？</a></span>
+                <span class="pull-right">
+                    <button type="submit" class="btn btn-success" /> 登录</button>
+                </span>
+            </div>
+        </form>
+        <form id="recoverform" action="#" class="form-vertical">
+            <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
+                <span class="pull-right"><a class="btn btn-info"/>Reecover</a></span>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/matrix.login.js') }}"></script>
+{% endblock %}
