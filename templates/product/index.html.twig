@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ include('header.html.twig') }}
+
+    <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"><a href="{{ path('admin_index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+                    首页</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+
+        <!--Action boxes-->
+        <div class="container-fluid">
+            <!--Chart-box-->
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                        <h5>商品列表 (该功能不完善，功能完善中....)</h5>
+                        <a class="label label-info" href="{{ path('admin_product_create') }}">添加</a> </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>产品名称</th>
+                                <th>缩略图</th>
+                                <th>价格</th>
+                                <th>尺寸</th>
+                                <th>库存</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in product %}
+                                <tr>
+                                    <td>{{ item.id }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td><img src="{{ asset('images/product.png') }}" alt="图片" width="45"></td>
+                                    <td>{{ item.price }}</td>
+                                    <td>{{ item.size }}</td>
+                                    <td>{{ item.num }}</td>
+                                    <td>{% if item.isActive == 1%} 是 {% else %} 否 {% endif %}</td>
+                                    <td>
+                                        <a href="{{ path('admin_product_create', {'id': item.id}) }}" class="btn btn-mini btn-info">编辑</a>
+                                        <a href="#" class="btn btn-mini btn-warning">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End-Chart-box-->
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ include('header.html.twig') }}
+
+    <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"><a href="{{ path('admin_index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+                    首页</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+
+        <!--Action boxes-->
+        <div class="container-fluid">
+            <!--Chart-box-->
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                        <h5>添加或修改商品 (该功能不完善，功能完善中....)</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                        <div class="control-group">
+                            <label class="control-label">商品 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.name, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">商品价格 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.price, {'attr': {'class': 'span5'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">商品库存 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.num, {'attr': {'class': 'span2'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">上市年份 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.year, {'attr': {'class': 'span2'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">商品材质 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.ingredient, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">基础风格 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.style, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">尺寸 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.size, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否上架</label>
+                            <div class="controls">
+                                <label>
+                                    {{ form_widget(form.isActive) }}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">商品描述 :</label>
+                            <div class="controls">
+                                {{ form_widget(form.description, {'attr': {'class': 'span11'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <!--End-Chart-box-->
+
+        </div>
+    </div>
+{% endblock %}
