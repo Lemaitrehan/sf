@@ -49,14 +49,22 @@
     <ul>
         <li {% if app.request.getPathInfo == '/admin' %} class="active" {% endif %}><a href="{{ path('admin_index') }}"><i class="icon icon-home"></i> <span>首页</span></a></li>
         <li {% if app.request.getPathInfo == '/admin/category/show' %} class="active submenu" {% else %} class="submenu" {% endif %}><a href="#"><i class="icon icon-th-list"></i> <span>商品管理</span> <span
-                        class="label label-important">2</span></a>
+                        class="label label-important">3</span></a>
             <ul>
                 <li><a href="{{ path('admin_category_show') }}">商品类型管理</a></li>
                 <li><a href="form-validation.html">商品管理</a></li>
+                <li><a href="form-validation.html">积分管理</a></li>
             </ul>
         </li>
         <li><a href="{{ path('admin_payment_index') }}"><i class="icon icon-tint"></i> <span>支付方式管理</span></a></li>
-        <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>物流管理</span></a></li>
+        <li {% if app.request.getPathInfo == '/admin/logistics/index' %} class="active submenu" {% else %} class="submenu" {% endif %}><a href="#"><i class="icon icon-pencil"></i></i> <span>物流管理</span> <span
+                        class="label label-important">2</span></a>
+            <ul>
+                <li><a href="{{ path('admin_logistics_index') }}">快递公司管理</a></li>
+                <li><a href="{{ path('admin_logistics_info') }}">物流参数配置</a></li>
+            </ul>
+        </li>
+
         <li {% if app.request.getPathInfo == '/admin/user' %} class="active submenu" {% else %} class="submenu" {% endif %}><a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span
                         class="label label-important">1</span></a>
             <ul>
