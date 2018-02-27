@@ -15,4 +15,20 @@ class AdminController extends Controller
     {
         return $this->render('admin/index.html.twig');
     }
+
+    /**
+     * @Route("/admin/user", name="admin_user")
+     */
+    public function userAction()
+    {
+        return $this->render("admin/user.html.twig");
+    }
+
+    /**
+     * @Route("/admin/order", name="admin_order")
+     */
+    public function orderAction()
+    {
+        return $this->render("admin/order.html.twig");
+    }
 }

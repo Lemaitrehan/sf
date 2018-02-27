@@ -39,6 +39,7 @@ class PaymentController extends Controller
         }
 
         $form = $this->createForm(PaymentType::class, $payment);
+
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {

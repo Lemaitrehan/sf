@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ include('header.html.twig') }}
+
+    <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"><a href="{{ path('admin_index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+                    首页</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+
+        <!--Action boxes-->
+        <div class="container-fluid">
+            <!--Chart-box-->
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                        <h5>订单管理</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>缩略图</th>
+                                <th>订单编号</th>
+                                <th>商品名称</th>
+                                <th>数量</th>
+                                <th>价格/元</th>
+                                <th>付款状态</th>
+                                <th>物流状态</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="{{ asset('images/order.jpg') }}" alt="商品图片" width="40"></td>
+                                <td>PB00000000001</td>
+                                <td>女士帽子</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>已付款</td>
+                                <td>已发货</td>
+                                <th>2018-01-22</th>
+                                <td>
+                                    <a href="#" class="btn btn-mini">详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="{{ asset('images/order.jpg') }}" alt="商品图片" width="40"></td>
+                                <td>PB00000000001</td>
+                                <td>女士帽子</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>已付款</td>
+                                <td>已发货</td>
+                                <th>2018-01-22</th>
+                                <td>
+                                    <a href="#" class="btn btn-mini">详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="{{ asset('images/order.jpg') }}" alt="商品图片" width="40"></td>
+                                <td>PB00000000001</td>
+                                <td>女士帽子</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>已付款</td>
+                                <td>已发货</td>
+                                <th>2018-01-22</th>
+                                <td>
+                                    <a href="#" class="btn btn-mini">详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="{{ asset('images/order.jpg') }}" alt="商品图片" width="40"></td>
+                                <td>PB00000000001</td>
+                                <td>女士帽子</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>已付款</td>
+                                <td>已发货</td>
+                                <th>2018-01-22</th>
+                                <td>
+                                    <a href="#" class="btn btn-mini">详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="{{ asset('images/order.jpg') }}" alt="商品图片" width="40"></td>
+                                <td>PB00000000001</td>
+                                <td>女士帽子</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>已付款</td>
+                                <td>已发货</td>
+                                <th>2018-01-22</th>
+                                <td>
+                                    <a href="#" class="btn btn-mini">详情</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End-Chart-box-->
+
+        </div>
+    </div>
+{% endblock %}

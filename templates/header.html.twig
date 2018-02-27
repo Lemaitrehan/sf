@@ -57,16 +57,16 @@
         </li>
         <li><a href="{{ path('admin_payment_index') }}"><i class="icon icon-tint"></i> <span>支付方式管理</span></a></li>
         <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>物流管理</span></a></li>
-        <li class="submenu"><a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span
+        <li {% if app.request.getPathInfo == '/admin/user' %} class="active submenu" {% else %} class="submenu" {% endif %}><a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span
                         class="label label-important">1</span></a>
             <ul>
-                <li><a href="index2.html">会员列表</a></li>
+                <li><a href="{{ path('admin_user') }}">会员列表</a></li>
             </ul>
         </li>
-        <li class="submenu"><a href="#"><i class="icon icon-info-sign"></i> <span>订单管理</span> <span
+        <li {% if app.request.getPathInfo == '/admin/order' %} class="active submenu" {% else %} class="submenu" {% endif %}><a href="#"><i class="icon icon-info-sign"></i> <span>订单管理</span> <span
                         class="label label-important">1</span></a>
             <ul>
-                <li><a href="error403.html">订单列表</a></li>
+                <li><a href="{{ path('admin_order') }}">订单列表</a></li>
             </ul>
         </li>
     </ul>

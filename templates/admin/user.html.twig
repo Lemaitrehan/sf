@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {{ include('header.html.twig') }}
+
+    <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"><a href="{{ path('admin_index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
+                    首页</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+
+        <!--Action boxes-->
+        <div class="container-fluid">
+            <!--Chart-box-->
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                        <h5>会员列表</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>会员名称</th>
+                                <th>手机号码</th>
+                                <th>性别</th>
+                                <th>年龄</th>
+                                <th>邮箱</th>
+                                <th>积分</th>
+                                <th>是否禁用</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>韩良</td>
+                                    <td>18460329692</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>18460329692@qq.com</td>
+                                    <td>100</td>
+                                    <td>否</td>
+                                    <td>
+                                        <a href="#" class="btn btn-mini">详情</a>
+                                        <a href="#" class="btn btn-mini btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>韩良</td>
+                                    <td>18460329692</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>18460329692@qq.com</td>
+                                    <td>100</td>
+                                    <td>否</td>
+                                    <td>
+                                        <a href="#" class="btn btn-mini">详情</a>
+                                        <a href="#" class="btn btn-mini btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>韩良</td>
+                                    <td>18460329692</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>18460329692@qq.com</td>
+                                    <td>100</td>
+                                    <td>否</td>
+                                    <td>
+                                        <a href="#" class="btn btn-mini">详情</a>
+                                        <a href="#" class="btn btn-mini btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>韩良</td>
+                                    <td>18460329692</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>18460329692@qq.com</td>
+                                    <td>100</td>
+                                    <td>否</td>
+                                    <td>
+                                        <a href="#" class="btn btn-mini">详情</a>
+                                        <a href="#" class="btn btn-mini btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>韩良</td>
+                                    <td>18460329692</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>18460329692@qq.com</td>
+                                    <td>100</td>
+                                    <td>否</td>
+                                    <td>
+                                        <a href="#" class="btn btn-mini">详情</a>
+                                        <a href="#" class="btn btn-mini btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End-Chart-box-->
+
+        </div>
+    </div>
+{% endblock %}
