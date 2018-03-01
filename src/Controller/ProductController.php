@@ -16,6 +16,7 @@ class ProductController extends Controller
     public function indexAction()
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->findAll();
+
         return $this->render('product/index.html.twig', [
             'product' => $product
         ]);

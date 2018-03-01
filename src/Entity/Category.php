@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
@@ -31,6 +33,16 @@ class Category
      * @var string
      */
     private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
+     */
+    private $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -78,5 +90,13 @@ class Category
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
 }
